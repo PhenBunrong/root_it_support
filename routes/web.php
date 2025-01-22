@@ -165,7 +165,6 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
 
     Route::match(['get','post'],'promotion_image/{id}', 'PromotionController@ViewAttributes');
     Route::delete('/deletePromotionImage/{id}', 'PromotionController@deleteAttributeImage');
-    Route::delete('/deletePromotionImage/{id}', 'PromotionController@deleteAttributeImage');
 
 
     Route::resource('/category', 'CategoryController');
