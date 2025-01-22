@@ -177,6 +177,12 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
     Route::delete('/deleteServiceImageAtrr/{id}', 'ServiceDataController@deleteAttributeImage');
     Route::match(['get','post'],'serviceImageAtrr/{id}', 'ServiceDataController@ViewAttributes');
     Route::delete('/deleteServiceImageAtrr/{id}', 'ServiceDataController@deleteAttributeImage');
+    Route::match(['get','post'],'serviceImageAtrr/{id}', 'ServiceDataController@ViewAttributes');
+    Route::delete('/deleteServiceImageAtrr/{id}', 'ServiceDataController@deleteAttributeImage');
+    Route::match(['get','post'],'serviceImageAtrr/{id}', 'ServiceDataController@ViewAttributes');
+    Route::delete('/deleteServiceImageAtrr/{id}', 'ServiceDataController@deleteAttributeImage');
+    Route::match(['get','post'],'serviceImageAtrr/{id}', 'ServiceDataController@ViewAttributes');
+    Route::delete('/deleteServiceImageAtrr/{id}', 'ServiceDataController@deleteAttributeImage');
 
 
     Route::resource('/solution', 'SolutionDataController');
