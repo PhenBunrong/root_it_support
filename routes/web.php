@@ -80,7 +80,7 @@ Route::group(['middleware' => ['auth','isSubscriber']], function () {
     Route::post('place-orders','CheckController@placeOrders');
     Route::match(['get','post'],'/stripe','CheckController@stripe');
 
-    
+
     Route::match(['get','post'],'/paypal','CheckController@paypal');
     Route::match(['get','post'],'paypal-success','CheckController@checkoutSuccess')->name('paypal.success');
     Route::match(['get','post'],'paypal-cancel','CheckController@checkoutCancel')->name('paypal.cancel');
@@ -94,7 +94,7 @@ Route::group(['middleware' => ['auth','isSubscriber']], function () {
 
     Route::post('check-coupon-code','CheckController@checkcoupon');
 
-    
+
     Route::get('/profile','ProfileController@index');
     Route::post('/updateAccount','ProfileController@updateAccount');
     Route::get('/orders','ProfileController@orders');
@@ -112,7 +112,7 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
     Route::get('/dashboard','HomeController@dashboad')->name('dashboad');
     Route::get('/view-users-chart','HomeController@userChart');
 
-    
+
     Route::get('/profile-user/{id}','RegisterUserController@profile')->name('profile.index');
     Route::get('/profileEdte-user/{id}','RegisterUserController@profileEdite')->name('profile.edit');
     Route::put('/profileUpdate/{id}','RegisterUserController@profileUpdate');
@@ -139,7 +139,7 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
     Route::post('/update-promotion-status', 'PromotionController@updateStatus');
     Route::post('/update-user-isban', 'RegisterUserController@updateBan');
     /* Route::post('/changeStatus', 'ProductController@changeStatus'); */
-    
+
 
     Route::get('/search/{id}','ProductController@getCategory');
 
@@ -165,6 +165,7 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
 
     Route::match(['get','post'],'promotion_image/{id}', 'PromotionController@ViewAttributes');
     Route::delete('/deletePromotionImage/{id}', 'PromotionController@deleteAttributeImage');
+    Route::delete('/deletePromotionImage/{id}', 'PromotionController@deleteAttributeImage');
 
 
     Route::resource('/category', 'CategoryController');
@@ -185,7 +186,7 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
     Route::get('order-view/{order_id}','OrderController@vieworder');
     Route::get('order-proceed/{order_id}','OrderController@proceedOrder');
     Route::get('generate-invoice/{order_id}','OrderController@invoice');
-    
+
     Route::get('report','OrderController@report')->name('report.index');
     Route::get('viewReport/{order_id}','OrderController@viewReport');
     Route::get('printReport/{order_id}','OrderController@printReport');
@@ -197,10 +198,10 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
 
     Route::resource('/banner', 'BannerController');
 
-    
+
     Route::get('activity','RegisterUserController@activity');
     Route::delete('destroyActivity/{id}','RegisterUserController@destroyActivity')->name('activity.destroy');
-    
+
     Route::get('/updateRole','RegisterUserController@updateRole');
 
     Route::post('searchReport','OrderController@searchReport');
@@ -209,19 +210,19 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
 
     Route::get('/userCreate','RegisterUserController@userCreate')->name('user.userCreate');
     Route::post('/userStore','RegisterUserController@userStore')->name('user.userStore');
-    // Sale Search 
+    // Sale Search
     Route::get('searchData','SearchController@index')->name('search.reports');
     Route::post('checkData','SearchController@reportSearch')->name('check.reports');
 
     Route::resource('coupon', 'CouponController');
-    
-    
+
+
     Route::resource('settings', 'SettingController');
 
 
   /*   Route::get('/showAttr/{id}','SolutionDataController@showAttr');
     Route::get('/attrImage/{id}','SolutionDataController@attrImage'); */
-    
+
 
 /*     Route::match(['get','post'],'add_attributes/{id}', 'ServiceDataController@addAttributes');
     Route::match(['get','post'],'edit_Attribute/{id}', 'ServiceDataController@editAttributes');
