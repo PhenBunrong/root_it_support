@@ -165,7 +165,6 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
 
     Route::match(['get','post'],'promotion_image/{id}', 'PromotionController@ViewAttributes');
     Route::delete('/deletePromotionImage/{id}', 'PromotionController@deleteAttributeImage');
-    Route::delete('/deletePromotionImage/{id}', 'PromotionController@deleteAttributeImage');
 
 
     Route::resource('/category', 'CategoryController');
@@ -176,7 +175,6 @@ Route::prefix('admin')->middleware('auth','isAdmin')->group(function(){
     Route::resource('/service', 'ServiceDataController');
     Route::match(['get','post'],'serviceImageAtrr/{id}', 'ServiceDataController@ViewAttributes');
     Route::delete('/deleteServiceImageAtrr/{id}', 'ServiceDataController@deleteAttributeImage');
-
 
     Route::resource('/solution', 'SolutionDataController');
     Route::match(['get','post'],'solutionImageAtrr/{id}', 'SolutionDataController@ViewAttributes');
